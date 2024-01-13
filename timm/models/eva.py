@@ -577,9 +577,9 @@ class Eva(nn.Module):
         return x if pre_logits else self.head(x)
 
     def forward(self, x):
-        x = self.forward_features(x)
-        x = self.forward_head(x)
-        return x
+        image = self.forward_features(x)
+        cls = self.forward_head(x)
+        return cls, image
 
 
 def checkpoint_filter_fn(
