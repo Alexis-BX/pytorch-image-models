@@ -578,7 +578,7 @@ class Eva(nn.Module):
 
     def forward(self, x):
         image = self.forward_features(x)
-        cls = self.forward_head(x)
+        cls = self.forward_head(image)
         return cls, image
 
 
